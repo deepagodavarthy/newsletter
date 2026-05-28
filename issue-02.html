@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The AI Learning Digest — Issue No. 02</title>
+<style>
+  :root{
+    --ink:#1a1a2e;
+    --muted:#5b5b75;
+    --paper:#fdfcf8;
+    --card:#ffffff;
+    --accent:#5b4bd6;
+    --accent-soft:#ece9ff;
+    --line:#e4e1d6;
+    --gold:#c79a3a;
+    --green:#1f8f5f;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:Georgia,"Times New Roman",serif;line-height:1.65;
+  }
+  .wrap{max-width:780px;margin:0 auto;padding:0 22px 60px;}
+
+  .masthead{text-align:center;border-bottom:3px double var(--ink);padding:34px 0 18px;margin-bottom:8px;}
+  .kicker{font-family:"Helvetica Neue",Arial,sans-serif;letter-spacing:.32em;text-transform:uppercase;font-size:11px;color:var(--gold);font-weight:700;}
+  .masthead h1{font-size:46px;margin:6px 0 4px;letter-spacing:-.5px;line-height:1.05;}
+  .issue-line{display:flex;justify-content:space-between;align-items:center;font-family:"Helvetica Neue",Arial,sans-serif;font-size:12px;color:var(--muted);border-top:1px solid var(--line);margin-top:14px;padding-top:10px;text-transform:uppercase;letter-spacing:.1em;}
+
+  .lead{margin:30px 0;}
+  .lead h2{font-size:30px;line-height:1.15;margin:0 0 12px;}
+  .lead .dek{font-size:18px;color:var(--muted);font-style:italic;margin:0;}
+
+  h3.section{font-family:"Helvetica Neue",Arial,sans-serif;font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);border-bottom:2px solid var(--accent-soft);padding-bottom:6px;margin:42px 0 18px;}
+  p{margin:0 0 16px;}
+
+  /* study plan table */
+  table{width:100%;border-collapse:collapse;font-size:15px;}
+  th,td{text-align:left;padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:top;}
+  th{font-family:"Helvetica Neue",Arial,sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);}
+  td.wk{font-family:"Helvetica Neue",Arial,sans-serif;font-weight:800;color:var(--accent);white-space:nowrap;}
+  tr:hover td{background:var(--accent-soft);}
+  .goal{color:var(--muted);font-size:13.5px;}
+
+  /* resources */
+  .res{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin:0 0 14px;}
+  .res h4{margin:0 0 4px;font-size:18px;}
+  .res .meta{font-family:"Helvetica Neue",Arial,sans-serif;font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;}
+  .free{color:var(--green);}
+  .paid{color:var(--gold);}
+  .res p{margin:6px 0 0;font-size:15px;color:var(--muted);}
+
+  /* projects */
+  .proj{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;}
+  .projcol{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px;}
+  .projcol .lvl{font-family:"Helvetica Neue",Arial,sans-serif;font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:800;color:var(--accent);margin-bottom:10px;}
+  .projcol ul{margin:0;padding-left:18px;}
+  .projcol li{margin:0 0 9px;font-size:14.5px;}
+
+  /* glossary */
+  .gloss dt{font-weight:bold;margin-top:14px;font-size:16px;}
+  .gloss dd{margin:2px 0 0;color:var(--muted);font-size:15px;}
+
+  /* habits */
+  .habits{list-style:none;padding:0;margin:0;}
+  .habits li{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:8px;padding:13px 16px;margin:0 0 10px;font-size:15px;}
+  .habits b{color:var(--ink);}
+
+  .callout{background:var(--accent);color:#fff;border-radius:12px;padding:24px 26px;margin:32px 0;}
+  .callout h3{margin:0 0 10px;font-size:22px;font-family:Georgia,serif;}
+  .callout p{margin:0;color:#fff;}
+
+  .next{display:flex;justify-content:space-between;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px 22px;margin-top:40px;}
+  .next .label{font-family:"Helvetica Neue",Arial,sans-serif;font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);}
+  .next a{font-family:"Helvetica Neue",Arial,sans-serif;font-weight:700;color:var(--accent);text-decoration:none;font-size:17px;}
+  .next a:hover{text-decoration:underline;}
+  footer{text-align:center;color:var(--muted);font-size:12px;font-family:"Helvetica Neue",Arial,sans-serif;margin-top:40px;border-top:3px double var(--ink);padding-top:18px;}
+
+  @media(max-width:560px){
+    .masthead h1{font-size:32px;}
+    .proj{grid-template-columns:1fr;}
+    table{font-size:13.5px;}
+    th,td{padding:8px 7px;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="kicker">A Newsletter for Curious Beginners</div>
+    <h1>The AI Learning Digest</h1>
+    <div class="issue-line">
+      <span>Issue No. 02</span>
+      <span>Study Plan, Resources &amp; Projects</span>
+      <span>May 28, 2026</span>
+    </div>
+  </header>
+
+  <section class="lead">
+    <h2>Now let's get practical.</h2>
+    <p class="dek">A 12-week plan you can actually follow, the resources worth your time, projects to prove you've learned it, and a glossary to keep handy.</p>
+  </section>
+
+  <h3 class="section">The 12-Week Study Plan</h3>
+  <p>Aim for about 5–7 hours a week. Falling behind is normal — just shift the schedule, don't quit. Each week ends with something you've <em>built</em> or <em>understood</em>, not just watched.</p>
+  <table>
+    <thead>
+      <tr><th>Week</th><th>Focus</th><th>What you'll be able to do</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="wk">1–2</td><td>Python fundamentals</td><td class="goal">Write small scripts; use lists, loops, functions, and notebooks comfortably.</td></tr>
+      <tr><td class="wk">3</td><td>Data with Pandas &amp; NumPy</td><td class="goal">Load a CSV, explore it, and make a simple chart.</td></tr>
+      <tr><td class="wk">4–5</td><td>Core ML with scikit-learn</td><td class="goal">Train your first model to predict something; understand train/test splits.</td></tr>
+      <tr><td class="wk">6</td><td>Math intuition</td><td class="goal">Explain vectors, gradients, and probability in plain English.</td></tr>
+      <tr><td class="wk">7–8</td><td>Neural networks</td><td class="goal">Build a small network that classifies images (e.g. handwritten digits).</td></tr>
+      <tr><td class="wk">9</td><td>How LLMs work</td><td class="goal">Describe tokens, embeddings, and transformers at a high level.</td></tr>
+      <tr><td class="wk">10</td><td>Prompting &amp; AI APIs</td><td class="goal">Call the Claude or OpenAI API from Python and get useful output.</td></tr>
+      <tr><td class="wk">11</td><td>Build: chat over your docs (RAG)</td><td class="goal">Make an AI answer questions about a PDF you give it.</td></tr>
+      <tr><td class="wk">12</td><td>Capstone project</td><td class="goal">Ship one small thing end-to-end and share it.</td></tr>
+    </tbody>
+  </table>
+
+  <h3 class="section">Curated Resources (Start with the Free Ones)</h3>
+
+  <div class="res">
+    <div class="meta free">Free · Course</div>
+    <h4>Andrew Ng — "AI For Everyone" (Coursera)</h4>
+    <p>Non-technical, big-picture intro. Perfect first watch to understand what AI can and can't do.</p>
+  </div>
+  <div class="res">
+    <div class="meta free">Free · Course</div>
+    <h4>Kaggle "Learn" Micro-Courses</h4>
+    <p>Short, hands-on lessons on Python, Pandas, and Intro to ML — all in your browser, no setup.</p>
+  </div>
+  <div class="res">
+    <div class="meta free">Free · Course</div>
+    <h4>fast.ai — "Practical Deep Learning for Coders"</h4>
+    <p>Build real models from day one. Best when you're ready for Phase 3.</p>
+  </div>
+  <div class="res">
+    <div class="meta free">Free · Video</div>
+    <h4>3Blue1Brown — "Neural Networks" series (YouTube)</h4>
+    <p>The clearest visual explanation of how neural nets actually work. Watch when the math feels abstract.</p>
+  </div>
+  <div class="res">
+    <div class="meta paid">Paid · Book</div>
+    <h4>"Hands-On Machine Learning" by Aurélien Géron</h4>
+    <p>The go-to practical book. Worth buying once you're past the basics and want depth.</p>
+  </div>
+  <div class="res">
+    <div class="meta free">Free · Docs</div>
+    <h4>Anthropic &amp; OpenAI API Quickstarts</h4>
+    <p>When you reach Phase 5, the official docs are the fastest way to make your first AI-powered app.</p>
+  </div>
+
+  <h3 class="section">Project Ideas — Learn by Building</h3>
+  <p>Projects turn knowledge into skill. Pick one slightly above your comfort level.</p>
+  <div class="proj">
+    <div class="projcol">
+      <div class="lvl">Beginner</div>
+      <ul>
+        <li>Predict house prices from a dataset</li>
+        <li>Classify emails as spam / not spam</li>
+        <li>A data chart that tells a story</li>
+      </ul>
+    </div>
+    <div class="projcol">
+      <div class="lvl">Intermediate</div>
+      <ul>
+        <li>Handwritten-digit recognizer</li>
+        <li>Movie recommendation toy</li>
+        <li>Sentiment analysis on tweets</li>
+      </ul>
+    </div>
+    <div class="projcol">
+      <div class="lvl">AI-Powered</div>
+      <ul>
+        <li>Chatbot over your own PDFs (RAG)</li>
+        <li>AI study-flashcard generator</li>
+        <li>A simple task "agent"</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 class="section">Glossary — Keep This Handy</h3>
+  <dl class="gloss">
+    <dt>Model</dt><dd>A program that has learned patterns from data and can make predictions or generate output.</dd>
+    <dt>Training</dt><dd>The process of showing a model lots of examples so it adjusts itself to get better.</dd>
+    <dt>Dataset</dt><dd>The collection of examples a model learns from (e.g. thousands of labeled photos).</dd>
+    <dt>Token</dt><dd>A chunk of text (roughly a word-piece) that language models read and write in.</dd>
+    <dt>Prompt</dt><dd>The instruction or question you give an AI model to get a response.</dd>
+    <dt>Embedding</dt><dd>Turning text or images into lists of numbers so a computer can compare meaning.</dd>
+    <dt>RAG</dt><dd>Retrieval-Augmented Generation — letting an AI look things up in your documents before answering.</dd>
+    <dt>Fine-tuning</dt><dd>Taking an existing model and training it a bit more on your specific data.</dd>
+    <dt>Agent</dt><dd>An AI system that can take actions (use tools, call APIs) to accomplish a goal, not just chat.</dd>
+  </dl>
+
+  <h3 class="section">5 Habits That Make It Stick</h3>
+  <ul class="habits">
+    <li><b>Code along, don't just watch.</b> Type every example yourself — passive watching fades fast.</li>
+    <li><b>Build in public.</b> Share progress on GitHub or socials; explaining cements learning.</li>
+    <li><b>Embrace being confused.</b> Confusion is the feeling of learning. Sit with it before searching.</li>
+    <li><b>Use AI as a tutor.</b> Ask Claude to explain errors, quiz you, or break down hard ideas.</li>
+    <li><b>Ship small &amp; often.</b> A finished tiny project beats a perfect unfinished one.</li>
+  </ul>
+
+  <div class="callout">
+    <h3>Your move</h3>
+    <p>Open a notebook today and write three lines of Python. That's it. The roadmap in Issue No. 01 tells you where you're going; this issue tells you how to walk it. Start small, stay consistent, and in twelve weeks you'll be building things you can't imagine today.</p>
+  </div>
+
+  <div class="next">
+    <div>
+      <div class="label">Go Back — Issue No. 01</div>
+      <a href="index.html">&larr; The Big Picture &amp; Your Roadmap</a>
+    </div>
+  </div>
+
+  <footer>
+    The AI Learning Digest · Issue No. 02 · Curated for your journey<br>
+    Progress &gt; perfection. See you at week twelve.
+  </footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The AI Learning Digest — Issue No. 01</title>
+<style>
+  :root{
+    --ink:#1a1a2e;
+    --muted:#5b5b75;
+    --paper:#fdfcf8;
+    --card:#ffffff;
+    --accent:#5b4bd6;
+    --accent-soft:#ece9ff;
+    --line:#e4e1d6;
+    --gold:#c79a3a;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:Georgia,"Times New Roman",serif;
+    line-height:1.65;
+  }
+  .wrap{max-width:780px;margin:0 auto;padding:0 22px 60px;}
+
+  /* Masthead */
+  .masthead{
+    text-align:center;
+    border-bottom:3px double var(--ink);
+    padding:34px 0 18px;
+    margin-bottom:8px;
+  }
+  .kicker{
+    font-family:"Helvetica Neue",Arial,sans-serif;
+    letter-spacing:.32em;
+    text-transform:uppercase;
+    font-size:11px;
+    color:var(--gold);
+    font-weight:700;
+  }
+  .masthead h1{
+    font-size:46px;
+    margin:6px 0 4px;
+    letter-spacing:-.5px;
+    line-height:1.05;
+  }
+  .issue-line{
+    display:flex;justify-content:space-between;align-items:center;
+    font-family:"Helvetica Neue",Arial,sans-serif;
+    font-size:12px;color:var(--muted);
+    border-top:1px solid var(--line);
+    margin-top:14px;padding-top:10px;
+    text-transform:uppercase;letter-spacing:.1em;
+  }
+
+  /* Lead */
+  .lead{
+    margin:30px 0;
+  }
+  .lead h2{
+    font-size:30px;line-height:1.15;margin:0 0 12px;
+  }
+  .lead .dek{font-size:18px;color:var(--muted);font-style:italic;margin:0 0 18px;}
+  .dropcap::first-letter{
+    font-size:62px;line-height:.78;float:left;padding:6px 10px 0 0;
+    color:var(--accent);font-weight:bold;
+  }
+
+  h3.section{
+    font-family:"Helvetica Neue",Arial,sans-serif;
+    font-size:13px;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--accent);
+    border-bottom:2px solid var(--accent-soft);
+    padding-bottom:6px;margin:42px 0 18px;
+  }
+
+  p{margin:0 0 16px;}
+
+  /* concept grid */
+  .concepts{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .concept{
+    background:var(--card);border:1px solid var(--line);
+    border-radius:10px;padding:16px 18px;
+  }
+  .concept h4{margin:0 0 6px;font-size:18px;}
+  .concept p{margin:0;font-size:15px;color:var(--muted);}
+  .concept .tag{
+    font-family:"Helvetica Neue",Arial,sans-serif;font-size:10px;
+    letter-spacing:.1em;text-transform:uppercase;color:var(--gold);font-weight:700;
+  }
+
+  /* roadmap */
+  .phase{
+    display:flex;gap:16px;border-left:3px solid var(--accent-soft);
+    padding:4px 0 22px 20px;position:relative;
+  }
+  .phase::before{
+    content:"";position:absolute;left:-9px;top:4px;width:15px;height:15px;
+    border-radius:50%;background:var(--accent);border:3px solid var(--paper);
+  }
+  .phase .num{
+    font-family:"Helvetica Neue",Arial,sans-serif;font-weight:800;
+    color:var(--accent);font-size:13px;letter-spacing:.1em;min-width:64px;
+    padding-top:2px;
+  }
+  .phase h4{margin:0 0 4px;font-size:19px;}
+  .phase p{margin:0 0 6px;font-size:15px;color:var(--muted);}
+  .phase .skills{
+    font-family:"Helvetica Neue",Arial,sans-serif;font-size:12px;color:var(--ink);
+    background:var(--accent-soft);display:inline-block;padding:3px 9px;border-radius:20px;
+    margin:2px 4px 2px 0;
+  }
+
+  /* callout */
+  .callout{
+    background:var(--accent);color:#fff;border-radius:12px;
+    padding:24px 26px;margin:30px 0;
+  }
+  .callout h3{margin:0 0 10px;font-size:22px;font-family:Georgia,serif;}
+  .callout ol{margin:0;padding-left:20px;}
+  .callout li{margin:0 0 9px;}
+  .callout a{color:#fff;text-decoration:underline;}
+
+  .quote{
+    font-size:21px;font-style:italic;text-align:center;
+    color:var(--ink);border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);padding:26px 10px;margin:34px 0;
+  }
+  .quote span{display:block;font-size:13px;font-style:normal;color:var(--muted);
+    font-family:"Helvetica Neue",Arial,sans-serif;letter-spacing:.1em;margin-top:10px;text-transform:uppercase;}
+
+  /* nav / footer */
+  .next{
+    display:flex;justify-content:space-between;align-items:center;
+    background:var(--card);border:1px solid var(--line);border-radius:10px;
+    padding:18px 22px;margin-top:40px;
+  }
+  .next .label{font-family:"Helvetica Neue",Arial,sans-serif;font-size:11px;
+    letter-spacing:.15em;text-transform:uppercase;color:var(--muted);}
+  .next a{
+    font-family:"Helvetica Neue",Arial,sans-serif;font-weight:700;
+    color:var(--accent);text-decoration:none;font-size:17px;
+  }
+  .next a:hover{text-decoration:underline;}
+  footer{
+    text-align:center;color:var(--muted);font-size:12px;
+    font-family:"Helvetica Neue",Arial,sans-serif;
+    margin-top:40px;border-top:3px double var(--ink);padding-top:18px;
+  }
+  @media(max-width:560px){
+    .masthead h1{font-size:32px;}
+    .concepts{grid-template-columns:1fr;}
+    .phase{flex-direction:column;gap:4px;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="kicker">A Newsletter for Curious Beginners</div>
+    <h1>The AI Learning Digest</h1>
+    <div class="issue-line">
+      <span>Issue No. 01</span>
+      <span>Your First Steps into AI</span>
+      <span>May 28, 2026</span>
+    </div>
+  </header>
+
+  <section class="lead">
+    <h2>Welcome — you're about to learn one of the most useful skills of the decade.</h2>
+    <p class="dek">A calm, no-jargon roadmap for going from "complete beginner" to "I can build things with AI."</p>
+    <p class="dropcap">Starting something new is exciting and a little overwhelming — there's a sea of buzzwords, courses, and opinions out there. This newsletter cuts through the noise. The goal of Issue No. 01 is simple: help you understand the landscape and know <em>exactly</em> where to put your hands this week. You don't need a math degree, a fancy laptop, or years of programming to begin. You need a clear path and steady, small steps. Let's build that path together.</p>
+  </section>
+
+  <h3 class="section">The Big Picture — What These Words Actually Mean</h3>
+  <p>Before the roadmap, let's untangle four words people use interchangeably. They're like nested boxes — each one fits inside the last.</p>
+  <div class="concepts">
+    <div class="concept">
+      <div class="tag">The Big Box</div>
+      <h4>Artificial Intelligence (AI)</h4>
+      <p>Any technique that makes a computer do something "smart" — from a chess engine to a chatbot.</p>
+    </div>
+    <div class="concept">
+      <div class="tag">Inside AI</div>
+      <h4>Machine Learning (ML)</h4>
+      <p>Instead of hand-writing rules, you let the computer <em>learn patterns from data</em>. This is where most real work lives.</p>
+    </div>
+    <div class="concept">
+      <div class="tag">Inside ML</div>
+      <h4>Deep Learning (DL)</h4>
+      <p>ML using "neural networks" with many layers. Powers image recognition, speech, and modern language models.</p>
+    </div>
+    <div class="concept">
+      <div class="tag">The Hot Topic</div>
+      <h4>Generative AI &amp; LLMs</h4>
+      <p>Models like Claude or ChatGPT that <em>create</em> text, images, and code. Built on deep learning, trained on huge datasets.</p>
+    </div>
+  </div>
+
+  <h3 class="section">Your 6-Phase Roadmap</h3>
+  <p>You don't have to do all of this, and you definitely don't have to do it in a rush. Think of these as checkpoints. Most beginners spend a few weeks per phase. Pick the depth that matches your goal — curiosity, career, or building a product.</p>
+
+  <div class="phase">
+    <div class="num">PHASE 0</div>
+    <div>
+      <h4>Foundations &amp; Mindset</h4>
+      <p>Get comfortable with a little Python and the "shape" of how AI thinks. No deep math yet — just orientation.</p>
+      <span class="skills">Python basics</span><span class="skills">Jupyter notebooks</span><span class="skills">Curiosity</span>
+    </div>
+  </div>
+
+  <div class="phase">
+    <div class="num">PHASE 1</div>
+    <div>
+      <h4>Core Machine Learning</h4>
+      <p>Learn how a model "learns": data in, prediction out. Understand training, testing, and why models get things wrong.</p>
+      <span class="skills">Regression</span><span class="skills">Classification</span><span class="skills">scikit-learn</span>
+    </div>
+  </div>
+
+  <div class="phase">
+    <div class="num">PHASE 2</div>
+    <div>
+      <h4>A Little Math (Just Enough)</h4>
+      <p>The intuition behind the magic — not proofs. What a vector is, what a gradient does, why probability matters.</p>
+      <span class="skills">Linear algebra intuition</span><span class="skills">Statistics</span>
+    </div>
+  </div>
+
+  <div class="phase">
+    <div class="num">PHASE 3</div>
+    <div>
+      <h4>Deep Learning &amp; Neural Networks</h4>
+      <p>Build your first neural network. Understand layers, weights, and how images and text become numbers.</p>
+      <span class="skills">Neural nets</span><span class="skills">PyTorch / Keras</span>
+    </div>
+  </div>
+
+  <div class="phase">
+    <div class="num">PHASE 4</div>
+    <div>
+      <h4>Modern AI: LLMs &amp; Generative AI</h4>
+      <p>How models like Claude work at a high level, what "tokens" and "prompts" are, and how to talk to them well.</p>
+      <span class="skills">Transformers</span><span class="skills">Prompting</span><span class="skills">Embeddings</span>
+    </div>
+  </div>
+
+  <div class="phase">
+    <div class="num">PHASE 5</div>
+    <div>
+      <h4>Building Real Things</h4>
+      <p>Use AI APIs to build apps: a chatbot over your own documents (RAG), or a small "agent" that takes actions.</p>
+      <span class="skills">APIs</span><span class="skills">RAG</span><span class="skills">Agents</span><span class="skills">Deploying</span>
+    </div>
+  </div>
+
+  <div class="callout">
+    <h3>Start Here This Week — 4 Concrete Actions</h3>
+    <ol>
+      <li><strong>Install Python &amp; open a notebook.</strong> Download <em>Anaconda</em> or just use <em>Google Colab</em> in your browser (zero setup).</li>
+      <li><strong>Spend 2–3 hours on Python basics.</strong> Variables, lists, loops, functions. That's plenty for now.</li>
+      <li><strong>Play with an AI tool daily.</strong> Ask Claude or ChatGPT to explain one concept from this roadmap in simple terms.</li>
+      <li><strong>Pick your "why."</strong> Career? Building a product? Curiosity? Write it down — it keeps you going on hard days.</li>
+    </ol>
+  </div>
+
+  <div class="quote">
+    "You do not have to be great to start, but you have to start to be great."
+    <span>— A good motto for week one</span>
+  </div>
+
+  <p>That's the map. In the next issue we get practical: a week-by-week study plan you can actually follow, the exact free courses and books worth your time, beginner project ideas, and a glossary so no term ever trips you up again.</p>
+
+  <div class="next">
+    <div>
+      <div class="label">Up Next — Issue No. 02</div>
+      <a href="issue-02.html">The Study Plan, Resources &amp; Projects &rarr;</a>
+    </div>
+  </div>
+
+  <footer>
+    The AI Learning Digest · Issue No. 01 · Curated for your journey<br>
+    Read at your own pace. Repeat sections freely. Progress &gt; perfection.
+  </footer>
+
+</div>
+</body>
+</html>
