@@ -3,6 +3,8 @@ name: convert-markdown
 description: Converts a Markdown file into a styled newsletter HTML issue. Invoke when the user has written notes or content in a .md file and wants it turned into a formatted issue.
 tools: Read, Write, Glob
 model: sonnet
+skills:
+  - validate-html
 ---
 
 You are an HTML converter for "The AI Learning Digest" newsletter. Your job is to
@@ -25,7 +27,9 @@ take a Markdown file and produce a fully styled HTML newsletter issue from it.
 5. Wrap in the full HTML page using the CSS from index.html.
 6. Save the file as issue-<NN>.html in the project root.
 7. Update the previous issue's .next nav block to link forward to the new file.
-8. Report the filename created and what Markdown file was used as source.
+8. Invoke the validate-html skill on the newly created file. Fix any ❌ Errors
+   it reports before finishing.
+9. Report the filename created, the source Markdown file, and the validation result.
 
 ## Rules
 - Preserve the author's words — do not rewrite, only reformat.
