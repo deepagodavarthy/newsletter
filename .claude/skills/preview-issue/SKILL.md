@@ -1,3 +1,8 @@
+---
+name: preview-issue
+description: Open a newsletter HTML file in the default browser
+---
+
 Open a newsletter HTML file in the default browser.
 
 File to open: $ARGUMENTS

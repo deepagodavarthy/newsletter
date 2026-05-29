@@ -1,4 +1,9 @@
-Create a new numbered HTML issue for "The AI Learning Digest" newsletter.
+---
+name: new-issue
+description: Scaffold the next numbered HTML issue for The AI Learning Digest newsletter
+---
+
+Create a new numbered HTML issue for "The AI Learning Digest".
 
 Topic (if provided): $ARGUMENTS
 
@@ -7,7 +12,7 @@ Steps:
    - index.html = Issue 01
    - issue-02.html = Issue 02, issue-03.html = Issue 03, etc.
 2. If no topic was given via $ARGUMENTS, ask: "What topic should Issue No. <N> cover?"
-3. Create the new HTML file (issue-<NN>.html) by following the structure and CSS
+3. Create the new HTML file (issue-<NN>.html) following the structure and CSS
    classes already used in index.html. Reuse the same :root variables and stylesheet.
    Update: <title>, issue number in the masthead, the date to today, subtitle in
    .issue-line, and all body content sections for the new topic.

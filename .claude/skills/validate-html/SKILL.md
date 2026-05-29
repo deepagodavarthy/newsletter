@@ -1,3 +1,8 @@
+---
+name: validate-html
+description: Check a newsletter HTML file for broken links, missing sections, and accessibility issues
+---
+
 Validate a newsletter HTML file from "The AI Learning Digest" project.
 
 File to check: $ARGUMENTS
@@ -14,8 +19,7 @@ Checks to perform:
 3. Images — every <img> must have a non-empty alt attribute.
 4. Empty anchors — flag any <a href="#"> unless clearly intentional.
 5. Navigation consistency — if there is a "previous issue" link, verify the href
-   points to the correct prior file (e.g. issue-03.html should link back to
-   issue-02.html or index.html for issue-02).
+   points to the correct prior file.
 
 Report findings grouped as:
   ✅ Passed
