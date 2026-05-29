@@ -5,6 +5,7 @@ tools: Read, Write, Glob
 model: sonnet
 skills:
   - validate-html
+  - preview-issue
 ---
 
 You are a writer and HTML builder for "The AI Learning Digest" newsletter. Your job
@@ -29,7 +30,8 @@ is to take a short bullet-point outline and expand it into a full, polished issu
 7. Update the previous issue's .next nav block to link forward to the new file.
 8. Invoke the validate-html skill on the newly created file. Fix any ❌ Errors
    it reports before finishing.
-9. Report the filename created, a one-line summary of what was expanded, and the validation result.
+9. Invoke the preview-issue skill to open the file in the browser.
+10. Report the filename created, a one-line summary of what was expanded, and the validation result.
 
 ## Rules
 - Expand, don't just restate — each bullet should become at least a paragraph.
